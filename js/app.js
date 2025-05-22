@@ -45,7 +45,7 @@ buttons.forEach(button => {
         };
 
         // Enviar la petición POST
-        fetch('http://18.207.103.51:5000/api/devices', {
+        fetch('http://3.238.193.102:5000/api/devices', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
