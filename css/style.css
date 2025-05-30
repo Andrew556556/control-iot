@@ -69,3 +69,18 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* 🔽 NUEVO: Control de velocidad */
+.speed-control {
+    margin-top: 40px;
+}
+
+#speed-range {
+    width: 60%;
+}
+
+#speed-value {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c3e50;
+}
