@@ -9,23 +9,24 @@
 <body>
     <div class="container">
         <h1>Control de vehículo IoT</h1>
+        
         <div class="controls">
             <div class="row">
-                <button class="btn purple" data-status="V_ADE_IZQ">V_ADE_IZQ</button>
+                <button class="btn purple" data-status="VUELTA IZQUIERDA">V_ADE_IZQ</button>
                 <button class="btn blue" data-status="AVANZAR">Avanzar</button>
-                <button class="btn purple" data-status="V_ADE_DER">V_ADE_DER</button>
+                <button class="btn purple" data-status="VUELTA DERECHA">V_ADE_DER</button>
             </div>
             <div class="row">
-                <button class="btn yellow" data-status="G_360_IZQ">G_360_IZQ</button>
-                <button class="btn yellow" data-status="G_90_IZQ">G_90_IZQ</button>
+                <button class="btn yellow" data-status="GIRO 360 IZQUIERDA">G_360_IZQ</button>
+                <button class="btn yellow" data-status="GIRO 90 IZQUIERDA">G_90_IZQ</button>
                 <button class="btn yellow" data-status="DETENER">Detener</button>
-                <button class="btn yellow" data-status="G_90_DER">G_90_DER</button>
-                <button class="btn yellow" data-status="G_360_DER">G_360_DER</button>
+                <button class="btn yellow" data-status="GIRO 90 DERECHA">G_90_DER</button>
+                <button class="btn yellow" data-status="GIRO 360 DERECHA">G_360_DER</button>
             </div>
             <div class="row">
-                <button class="btn purple" data-status="V_ATR_IZQ">V_ATR_IZQ</button>
+                <button class="btn purple" data-status="VUELTA ATRAS IZQUIERDA">V_ATR_IZQ</button>
                 <button class="btn teal" data-status="RETROCEDER">Retroceder</button>
-                <button class="btn purple" data-status="V_ATR_DER">V_ATR_DER</button>
+                <button class="btn purple" data-status="VUELTA ATRAS DERECHA">V_ATR_DER</button>
             </div>
         </div>
 
@@ -34,6 +35,11 @@
             <p id="movement-status">Esperando orden...</p>
         </div>
 
+        <div class="speed-control">
+            <h2>Velocidad</h2>
+            <input type="range" id="speed-range" min="0" max="100" value="50">
+            <p>Velocidad actual: <span id="speed-value">50</span>%</p>
+        </div>
     </div>
 
     <footer>
@@ -43,3 +49,4 @@
     <script src="js/app.js"></script>
 </body>
 </html>
+
