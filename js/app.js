@@ -6,6 +6,13 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(btn => btn.disabled = true);
 
 const movementStatus = document.getElementById('movement-status');
+const speedRange = document.getElementById('speed-range');
+const speedValue = document.getElementById('speed-value');
+
+// Actualizar valor mostrado de velocidad
+speedRange.addEventListener('input', () => {
+    speedValue.textContent = speedRange.value;
+});
 
 // Función para obtener la IP pública
 function fetchPublicIP() {
@@ -17,8 +24,6 @@ function fetchPublicIP() {
         .then(data => {
             publicIP = data.ip;
             console.log('IP pública obtenida:', publicIP);
-
-            // Habilitar botones después de obtener IP
             buttons.forEach(btn => btn.disabled = false);
         })
         .catch(error => {
@@ -33,19 +38,16 @@ window.addEventListener('DOMContentLoaded', fetchPublicIP);
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const status = button.getAttribute('data-status');
-
-        // Actualizar el texto en pantalla
         movementStatus.textContent = status;
 
-        // ⚠️ Aquí se había eliminado la declaración del payload
         const payload = {
             ip: publicIP || "192.168.1.100",
             name: "Andrew Josue Vazquez",
-            status: status
+            status: status,
+            speed: parseInt(speedRange.value)
         };
 
-        // Enviar la petición POST
-        fetch('http://44.199.208.126:5000/api/devices', {
+        fetch('http://44.205.6.220:5000/api/devices', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -62,3 +64,4 @@ buttons.forEach(button => {
         });
     });
 });
+
