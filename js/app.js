@@ -47,7 +47,7 @@ buttons.forEach(button => {
             speed: parseInt(speedRange.value)
         };
 
-        fetch('http://44.193.25.162:5000/api/devices', {
+        fetch('http://44.204.133.44:5000/api/devices', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
